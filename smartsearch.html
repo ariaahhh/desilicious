@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Smart Search</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 30px;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        font-family: cursive;
+        margin-bottom: 30px;
+        color: #cc0000;
+      }
+
+      .form label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #333;
+      }
+
+      .checkbox-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin-top: 15px;
+      }
+
+      .checkbox-grid input {
+        margin-right: 8px;
+      }
+
+      button {
+        margin-top: 25px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #cc0000;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #990000;
+      }
+
+      hr {
+        margin: 15px 0;
+        border: 0.5px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>SMART SEARCH</h1>
+      <div class="form">
+        <form action="searchresult.php" method="post">
+          <label>VEGETABLES</label>
+          <hr />
+          <div class="checkbox-grid">
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Ash Gourd" />
+              Ash Gourd</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Beans" />
+              Beans</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Brinjal" />
+              Brinjal</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Beetroot" />
+              Beetroot</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Bottle Gourd"
+              />
+              Bottle Gourd</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Broccoli" />
+              Broccoli</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Carrot" />
+              Carrot</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Cabbage" />
+              Cabbage</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Cauliflower"
+              />
+              Cauliflower</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Capsicum" />
+              Capsicum</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Curry Leaves"
+              />
+              Curry Leaves</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Cucumber" />
+              Cucumber</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Coriander" />
+              Coriander</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Drumstick" />
+              Drumstick</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Elephant Yam"
+              />
+              Elephant Yam</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Garlic" />
+              Garlic</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Ginger" />
+              Ginger</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Ivy Gourd" />
+              Ivy Gourd</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Green Chilli"
+              />
+              Green Chilli</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Lady Finger"
+              />
+              Lady Finger</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Mint" />
+              Mint</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Mushroom" />
+              Mushroom</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Onion" />
+              Onion</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Potato" />
+              Potato</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Pumpkin" />
+              Pumpkin</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Radish" />
+              Radish</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Ridge Gourd"
+              />
+              Ridge Gourd</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Snake Gourd"
+              />
+              Snake Gourd</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Spinach" />
+              Spinach</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Spring Onion"
+              />
+              Spring Onion</label
+            >
+            <label
+              ><input
+                type="checkbox"
+                name="ingredients[]"
+                value="Sweet Potato"
+              />
+              Sweet Potato</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Soya Bean" />
+              Soya Bean</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Tomato" />
+              Tomato</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Tamarind" />
+              Tamarind</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Turnip" />
+              Turnip</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Vaal Beans" />
+              Vaal Beans</label
+            >
+            <label
+              ><input type="checkbox" name="ingredients[]" value="Yam" />
+              Yam</label
+            >
+          </div>
+          <button type="submit">Search Recipes</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
