@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #000000;
+    }
+
+    .container {
+      width: 800px;
+      height: 500px;
+      display: flex;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .signup-form {
+      background-color: #fff;
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .signup-form h2 {
+      margin-bottom: 20px;
+      color: #990000;
+    }
+
+    .signup-form input,
+    .signup-form select {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    .signup-form button {
+      padding: 12px;
+      background-color: #990000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .signup-form button:hover {
+      background-color: #cc0000;
+    }
+
+    .signup-form p {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .signup-form a {
+      color: #990000;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: cursive;
+    }
+
+    .signup-form a:hover {
+      text-decoration: underline;
+    }
+
+    .image-side {
+      flex: 1;
+      background-image: url('signup.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .image-side::after {
+      content: "Welcome to Desilicious";
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      text-shadow: 1px 1px 4px #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="signup-form">
+      <h2>Sign Up</h2>
+      <form action="signup.php" method="post">
+        <input type="text" name="fullname" placeholder="Fullname" required />
+        <input type="email" name="email" placeholder="username@gmail.com" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirm_password" placeholder="Confirm Password" required />
+
+        <select name="role" required style="color: rgba(0,0,0,0.5);">
+          <option value="" disabled selected hidden>User or Chef?</option>
+          <option value="user" style="color: black;">User</option>
+          <option value="chef" style="color: black;">Chef</option>
+        </select>
+
+        <button type="submit">Signup</button>
+      </form>
+
+      <p>Already a member? <a href="login.html">Login</a></p>
+    </div>
+    <div class="image-side"></div>
+  </div>
+</body>
+</html>
