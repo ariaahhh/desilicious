@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chef Dashboard</title>
+  <link rel="stylesheet" href="chef style.css" />
+</head>
+<body>
+  <header>
+    <h1>Chef's Corner</h1>
+    <p>Log in and manage your delicious dishes</p>
+  </header>
+
+  <!-- Chef Login Section -->
+  <section class="form-section" id="chef-login-section">
+    <h2>Enter Your Details</h2>
+    <form id="chef-login-form">
+      <input type="text" id="chef-name" placeholder="Chef Name" required />
+      <input type="text" id="chef-specialty" placeholder="Specialty (e.g. Italian, Desserts)" required />
+      <button type="submit">Enter</button>
+    </form>
+  </section>
+
+  <!-- Chef Dashboard -->
+  <section id="chef-dashboard" style="display: none;">
+    <div class="chef-greeting">
+      <h2 id="greeting"></h2>
+      <p id="specialty-info"></p>
+    </div>
+
+    <!-- Form to Add Dish -->
+    <div class="form-section">
+      <h3>Add a New Dish</h3>
+      <form id="add-dish-form">
+        <input type="text" placeholder="Dish Name" required />
+        <textarea placeholder="Dish Description" required></textarea>
+        <input type="url" placeholder="Image URL" required />
+        <button type="submit">Add Dish</button>
+      </form>
+    </div>
+
+    <!-- Dish List -->
+    <section class="recipes">
+      <h3>Your Dishes</h3>
+      <div class="recipe-list" id="recipe-list"></div>
+    </section>
+  </section>
+
+  <script>
+    const chefLoginForm = document.getElementById('chef-login-form');
+    const chefDashboard = document.getElementById('chef-dashboard');
+    const loginSection = document.getElementById('chef-login-section');
+    const greeting = document.getElementById('greeting');
+    const specialtyInfo = document.getElementById('specialty-info');
+    const addDishForm = document.getElementById('add-dish-form');
+    const recipeList = document.getElementById('recipe-list');
+
+    let chef = {
+      name: '',
+      specialty: '',
+      dishes: []
+    };
+
+    chefLoginForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      chef.name = document.getElementById('chef-name').value;
+      chef.specialty = document.getElementById('chef-specialty').value;
+
+      greeting.textContent = `Hello, Chef ${chef.name}!`;
+      specialtyInfo.textContent = `Specialty: ${chef.specialty}`;
+
+      loginSection.style.display = 'none';
+      chefDashboard.style.display = 'block';
+    });
+
+    addDishForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const dishName = this.elements[0].value;
+      const dishDesc = this.elements[1].value;
+      const dishImg = this.elements[2].value;
+
+      const dish = {
+        name: dishName,
+        desc: dishDesc,
+        img: dishImg
+      };
+
+      chef.dishes.push(dish);
+      displayDishes();
+      this.reset();
+    });
+
+    function displayDishes() {
+      recipeList.innerHTML = '';
+      chef.dishes.forEach(dish => {
+        const card = document.createElement('div');
+        card.className = 'recipe-card';
+        card.innerHTML = `
+          <img src="${dish.img}" alt="${dish.name}" />
+          <h3>${dish.name}</h3>
+          <p>${dish.desc}</p>
+        `;
+        recipeList.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
