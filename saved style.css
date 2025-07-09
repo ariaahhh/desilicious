@@ -1,15 +1,21 @@
-/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+  background-image: url("saved-style.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Gives a soft white overlay */
+  background-blend-mode: saturation;
+
   font-family: 'Segoe UI', sans-serif;
-  background: #fffdf8;
   color: #333;
   line-height: 1.6;
 }
+
 .container {
   width: 90%;
   max-width: 1100px;
@@ -18,11 +24,11 @@ body {
 
 /* Header */
 header {
-  background: #ffb347;
+  background: #cf2424;
   color: #fff;
   padding: 2rem 0;
   text-align: center;
-  border-bottom: 4px solid #ff914d;
+  border-bottom: 4px solid #c02525;
 }
 header h1 {
   font-size: 2.5rem;
@@ -35,7 +41,7 @@ header p {
 main h2 {
   margin: 2rem 0 1rem;
   font-size: 2rem;
-  color: #ff914d;
+  color: #db2222;
 }
 .recipe-grid {
   display: grid;
